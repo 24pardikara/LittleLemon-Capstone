@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" font-family="Arial, sans-serif" font-size="13">
+  <rect x="0" y="0" width="900" height="560" fill="#ffffff"/>
+  <text x="450" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="#1f2937">Little Lemon Database - ER Diagram</text>
+
+  <!-- relationship lines -->
+  <g stroke="#9ca3af" stroke-width="1.6" fill="none">
+    <path d="M250 150 L360 150"/>        <!-- Customers -> Orders -->
+    <path d="M620 210 L620 150 L540 150"/> <!-- Menu -> Orders -->
+    <path d="M150 240 L150 420"/>         <!-- Customers -> Bookings -->
+  </g>
+  <g fill="#6b7280" font-size="11">
+    <text x="275" y="142">1 : N</text>
+    <text x="548" y="142">N : 1</text>
+    <text x="158" y="335">1 : N</text>
+  </g>
+
+  <!-- Customers -->
+  <g>
+    <rect x="30" y="80" width="220" height="160" rx="4" fill="#eef2ff" stroke="#4f46e5"/>
+    <rect x="30" y="80" width="220" height="26" fill="#4f46e5"/>
+    <text x="42" y="98" fill="#ffffff" font-weight="bold">Customers</text>
+    <text x="42" y="126" fill="#111827">PK  CustomerID</text>
+    <text x="42" y="148" fill="#111827">CustomerName</text>
+    <text x="42" y="170" fill="#111827">City</text>
+    <text x="42" y="192" fill="#111827">Country</text>
+    <text x="42" y="214" fill="#111827">PostalCode</text>
+    <text x="42" y="234" fill="#111827">CountryCode</text>
+  </g>
+
+  <!-- Orders -->
+  <g>
+    <rect x="360" y="60" width="180" height="230" rx="4" fill="#fef3c7" stroke="#d97706"/>
+    <rect x="360" y="60" width="180" height="26" fill="#d97706"/>
+    <text x="372" y="78" fill="#ffffff" font-weight="bold">Orders</text>
+    <text x="372" y="106" fill="#111827">PK  OrderRecordID</text>
+    <text x="372" y="128" fill="#111827">OrderID</text>
+    <text x="372" y="150" fill="#b45309">FK  CustomerID</text>
+    <text x="372" y="172" fill="#b45309">FK  MenuID</text>
+    <text x="372" y="194" fill="#111827">OrderDate</text>
+    <text x="372" y="216" fill="#111827">DeliveryDate</text>
+    <text x="372" y="238" fill="#111827">Cost / Sales</text>
+    <text x="372" y="260" fill="#111827">Quantity / Discount</text>
+    <text x="372" y="282" fill="#111827">DeliveryCost</text>
+  </g>
+
+  <!-- Menu -->
+  <g>
+    <rect x="620" y="210" width="240" height="170" rx="4" fill="#ecfeff" stroke="#0891b2"/>
+    <rect x="620" y="210" width="240" height="26" fill="#0891b2"/>
+    <text x="632" y="228" fill="#ffffff" font-weight="bold">Menu</text>
+    <text x="632" y="256" fill="#111827">PK  MenuID</text>
+    <text x="632" y="278" fill="#111827">CourseName</text>
+    <text x="632" y="300" fill="#111827">CuisineName</text>
+    <text x="632" y="322" fill="#111827">StarterName</text>
+    <text x="632" y="344" fill="#111827">DesertName</text>
+    <text x="632" y="366" fill="#111827">Drink / Sides</text>
+  </g>
+
+  <!-- Bookings -->
+  <g>
+    <rect x="30" y="420" width="240" height="120" rx="4" fill="#dcfce7" stroke="#16a34a"/>
+    <rect x="30" y="420" width="240" height="26" fill="#16a34a"/>
+    <text x="42" y="438" fill="#ffffff" font-weight="bold">Bookings</text>
+    <text x="42" y="466" fill="#111827">PK  BookingID</text>
+    <text x="42" y="488" fill="#111827">BookingDate</text>
+    <text x="42" y="510" fill="#111827">TableNumber</text>
+    <text x="42" y="530" fill="#b45309">FK  CustomerID</text>
+  </g>
+
+  <text x="450" y="470" fill="#6b7280" font-size="12">Stored procedures: GetMaxQuantity, ManageBooking,</text>
+  <text x="450" y="490" fill="#6b7280" font-size="12">AddBooking, UpdateBooking, CancelBooking</text>
+</svg>
